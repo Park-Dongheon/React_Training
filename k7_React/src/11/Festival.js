@@ -31,15 +31,9 @@ export default function Festival() {
             let tm = tdata.filter(item => item.GUGUN_NM === selRef.current.value)
                           .map(item => <FestivalCard key={item.UC_SEQ}
                                                      imgUrl={item.MAIN_IMG_NORMAL}
-<<<<<<< HEAD
                                                      title={item.TITLE} 
                                                      content={item.ITEMCNTNTS} 
                                                      spTag={item.CNTCT_TEL}/>);
-=======
-                                                     title={item.MAIN_TITLE} 
-                                                     content={item.TRFC_INFO} 
-                                                     spTag={item.USAGE_AMOUNT}/>);
->>>>>>> 0a2d43a140833541dde315c4986e802be531175e
 
             console.log("tm", tm)
             setCards(tm)

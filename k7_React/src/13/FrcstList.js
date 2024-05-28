@@ -77,14 +77,14 @@ export default function FrcstList() {
 
     let url ;
     if (gubun === '초단기'){
-        url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?`
-        url = url + `serviceKey=${process.env.REACT_APP_API_KEY}&pageNo=1&numOfRows=1000&dataType=json`
-        url = url + `&base_date=${dt}&base_time=0630&nx=${x}&ny=${y}`
+        url = `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?`
+        url = url + `serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=900&pageNo=1`
+        url = url + `&dataType=json&base_date=${dt}&base_time=0630&nx=${x}&ny=${y}`
     }
     else {
-        url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?`
-        url = url + `serviceKey=${process.env.REACT_APP_API_KEY}&pageNo=1&numOfRows=1000&dataType=json`
-        url = url + `&base_date=${dt}&base_time=0500&nx=${x}&ny=${y}`
+        url = `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?`
+        url = url + `serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=900&pageNo=1`
+        url = url + `&dataType=json&base_date=${dt}&base_time=0500&nx=${x}&ny=${y}`
     }
 
     getFetchData(url)
@@ -92,6 +92,7 @@ export default function FrcstList() {
   }, [dt, gubun, x, y]);
 
   useEffect(() => {
+    if(!tdata) return;
     console.log(tdata)
   }, [tdata]);
 
