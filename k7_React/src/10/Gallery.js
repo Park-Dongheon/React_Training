@@ -11,12 +11,11 @@ export default function Gallery() {
   const [cards, setCards] = useState();
   const inRef = useRef();
 
-<<<<<<< HEAD
     //사용자 정의함수
     const handleOk = (e) => {
         e.preventDefault();
         console.log(inRef.current.value) ;
-        if (inRef.current.value == '') {
+        if (inRef.current.value === '') {
           alert('키워드를 입력하세요.') ;
           inRef.current.focus();
           return ;
@@ -28,16 +27,6 @@ export default function Gallery() {
         url = url +  `&keyword=${encodeURI(inRef.current.value)}&_type=json`;
       
         getFetchData(url) ;
-=======
-  //사용자 정의함수
-  const handleOk = (e) => {
-    e.preventDefault();
-    console.log(inRef.current.value);
-    if (inRef.current.value === '') {
-      alert('키워드를 입력하세요.');
-      inRef.current.focus();
-      return;
->>>>>>> 0a2d43a140833541dde315c4986e802be531175e
     }
 
   //데이터 초기화
@@ -66,7 +55,8 @@ export default function Gallery() {
         console.log(data)
         setGData(data.response.body.items.item)
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
+      console.log("getFetchData", url) 
   };
 
   // 컴포넌트 생성시
