@@ -2,12 +2,10 @@ import ButtonC from "../UI/Button";
 import TailSelect from '../UI/TailSelect';
 import TailInput from "../UI/TailInput";
 
-import getcode from './getcode.json';
 import getxy from './getxy.json';
 
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 
 export default function Frcst() {
 
